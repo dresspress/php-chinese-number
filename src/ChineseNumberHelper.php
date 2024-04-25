@@ -57,7 +57,7 @@ class ChineseNumberHelper {
     }
 
     public static function toNumber($str) {
-        return self::tonumber2($str);
+        return self::tonumber1($str);
     }
 
     /**
