@@ -4,7 +4,7 @@ namespace DressPress\ChineseNumber;
 
 class ChineseNumberHelper {
     /**
-     * Undocumented function
+     * 阿拉伯数字转中文数字表达
      * 
      * @link https://learnku.com/articles/39405
      *
@@ -56,19 +56,15 @@ class ChineseNumberHelper {
         return $chiStr;
     }
 
-    public static function toNumber($str) {
-        return self::tonumber1($str);
-    }
-
     /**
-     * Undocumented function
+     * 中文数字表达转阿拉伯数字
      * 
      * @link https://learnku.com/articles/39405
      *
      * @param string $string
      * @return string
      */
-    private static function toNumber1($string) {
+    public static function toNumber($string) {
 
         if (is_numeric($string)) {
             return $string;
@@ -109,60 +105,5 @@ class ChineseNumberHelper {
             '两' => 2
         );
         return $num + @$d[$string];
-    }
-
-    /**
-     * Undocumented function
-     * @link https://gist.github.com/sweetOranges/6b1eeae9a88ef3b67d1d2ebd74728c42
-     *
-     * @param [type] $str
-     * @return string
-     */
-    private static function toNumber2($str) {
-        //汉字装换数字的对照表
-        $number_map = array('零' => 0, '一' => 1, '二' => 2, '三' => 3, '四' => 4, '五' => 5, '六' => 6, '七' => 7, '八' => 8, '九' => 9);
-        $step_map = array('十' => 10, '百' => 100, '千' => 1000);
-        $bigStep_map = array('万' => '10000', '亿' => 100000000);
-        //操作数栈，值栈
-        $opStack = array(1);
-        $valStack = array();
-        //以万,亿为分割单位对数字进行拆分计算
-        //例如:三千五百万一千一百零五，对其进
-        //行分别入op,val栈
-        //				op 中为1,10000
-        //				val中为1105,3500
-        //最后将栈进行对应合并操作,得出操作数
-        for ($i = mb_strlen($str) - 1; $i >= 0; $i--) {
-            $_val  = 0;
-            $_step = 1;
-            for ($j = $i; $j >= 0; $j--) {
-                $_char = mb_substr($str, $j, 1);
-                if (array_key_exists($_char, $number_map)) {
-                    $_val += $_step * $number_map[$_char];
-                }
-                if (array_key_exists($_char, $step_map)) {
-                    $_step = $step_map[$_char];
-                }
-                $i = $j;
-                if (array_key_exists($_char, $bigStep_map)) {
-                    array_push($opStack, $bigStep_map[$_char]);
-                    break;
-                }
-            }
-            array_push($valStack, $_val);
-        }
-        $number = 0;
-        //合并操作数
-        while (count($opStack) > 0) {
-            $va = array_pop($valStack);
-            $op = array_pop($opStack);
-            $number += $va * $op;
-        }
-        //检查两栈是否都弹出完毕，否则表达式错误
-        if (count($opStack) == 0 && count($valStack) == 0) {
-            return $number;
-        } else {
-            return False;
-        }
     }
 }
