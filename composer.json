@@ -2,10 +2,10 @@
     "name": "dresspress/php-chinese-number",
     "description": "PHP数字转为汉字描述、人民币大写方法。",
     "license": "MIT",
-    "homepage": "https://github.com/dresspress/PHP-ChineseNumber",
+    "homepage": "https://github.com/dresspress/php-chinese-number",
     "support": {
-        "issues": "https://github.com/dresspress/PHP-ChineseNumber",
-        "source": "https://github.com/dresspress/PHP-ChineseNumber"
+        "issues": "https://github.com/dresspress/php-chinese-number",
+        "source": "https://github.com/dresspress/php-chinese-number"
     },
     "keywords": [
         "php",
