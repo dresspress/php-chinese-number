@@ -1,6 +1,6 @@
 {
     "name": "dresspress/php-chinese-number",
-    "description": "PHP数字转为汉字描述、人民币大写方法。",
+    "description": "PHP阿拉伯数字和中文数字的相互转换。",
     "license": "MIT",
     "homepage": "https://github.com/dresspress/php-chinese-number",
     "support": {
@@ -14,17 +14,17 @@
     ],
     "authors": [
         {
-            "name": "Cloud Stone",
-            "email": "cloudinstone@gmail.com"
+            "name": "DressPress",
+            "email": "nobody@nospam.com"
         }
     ],
     "require": {
         "php": ">=5.4"
     },
     "autoload": {
-        "files": [
-            "number2chinese.php"
-        ]
+        "psr-4": {
+            "DressPress\\ChineseNumber\\": "src"
+        }
     },
     "config": {
         "sort-packages": true
