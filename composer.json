@@ -1,24 +1,30 @@
 {
-    "name": "wilon/php-number2chinese",
+    "name": "dp/php-chinese-number",
     "description": "PHP数字转为汉字描述、人民币大写方法。",
     "license": "MIT",
-    "homepage": "https://wilon.github.io",
+    "homepage": "https://github.com/dresspress/PHP-ChineseNumber",
     "support": {
-        "issues": "https://github.com/wilon/php-number2chinese/issues",
-        "source": "https://github.com/wilon/php-number2chinese"
+        "issues": "https://github.com/dresspress/PHP-ChineseNumber",
+        "source": "https://github.com/dresspress/PHP-ChineseNumber"
     },
-    "keywords": ["php", "number", "chinese"],
+    "keywords": [
+        "php",
+        "number",
+        "chinese"
+    ],
     "authors": [
         {
-            "name": "Weilong Wang",
-            "email": "wilonx@163.com"
+            "name": "Cloud Stone",
+            "email": "cloudinstone@gmail.com"
         }
     ],
     "require": {
         "php": ">=5.4"
     },
     "autoload": {
-        "files": ["number2chinese.php"]
+        "files": [
+            "number2chinese.php"
+        ]
     },
     "config": {
         "sort-packages": true
